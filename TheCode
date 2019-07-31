@@ -1,25 +1,38 @@
 import turtle
 
+# Draw petal with a radius ("r") of "angle" and turn it at a 180 degree angle
+
 def petal(t, r, angle):
     for i in range(2):
         t.circle(r,angle)
         t.left(180-angle)
+        
+# Define flower function through "t" (turtle) "n" (number of petals), and use petal function to apply petals. 
+# Divide 360.0 by number of petals to create a general circle shape of each flower 
         
 def flower(t, n, r, angle):
     for i in range(n):
         petal(t,r,angle)
         t.left(360.0/n)
 
+# Define background color as well as turtle and when the turtle draws
+
 def move(t, length):
     window = turtle.Screen()
     window.bgcolor("Beige")
-    t.pu()
+    t.penup()
     t.fd(length)
-    t.pd()
+    t.pendown()
+    
+# Create drawing function by applying name 
     
 kasey = turtle.Turtle()
 
+# Create speed of the turtle drawing
+
 kasey.speed(6)
+
+# Create colors and general design of each flower
 
 kasey.color("pink")
 kasey.shape("turtle")
