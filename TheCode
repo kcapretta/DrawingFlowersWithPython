@@ -1,0 +1,37 @@
+import turtle
+
+def petal(t, r, angle):
+    for i in range(2):
+        t.circle(r,angle)
+        t.left(180-angle)
+        
+def flower(t, n, r, angle):
+    for i in range(n):
+        petal(t,r,angle)
+        t.left(360.0/n)
+
+def move(t, length):
+    window = turtle.Screen()
+    window.bgcolor("Beige")
+    t.pu()
+    t.fd(length)
+    t.pd()
+    
+kasey = turtle.Turtle()
+
+kasey.speed(6)
+
+kasey.color("pink")
+kasey.shape("turtle")
+move(kasey, -150)
+kasey.begin_fill()
+flower(kasey, 8, 60.0, 60.0)
+kasey.end_fill()
+
+kasey.color("pink")
+move(kasey, 150)
+flower(kasey, 10, 40.0, 80.0)
+
+kasey.color("green")
+move(kasey, 150)
+flower(kasey, 14, 70.0, 50.0)
